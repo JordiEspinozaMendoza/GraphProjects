@@ -6,24 +6,27 @@ public class Metrics extends JFrame{
 //    set windows title bar String and dimensions
     public Metrics(){
         super("Metrics");
-        setSize(600,125);
+        setSize(800,400);
         setVisible(true);
+        setLocationRelativeTo(null);
     }
     public void paint(Graphics g){
         super.paint(g);
 //        We set the new font
-        g.setFont(new Font("Serif", Font.BOLD,12));
+        Font font = new Font("SansSerif", Font.BOLD,12);
+        g.setFont(font);
 //        We get the metrics for the actual font
-        FontMetrics metrics =g.getFontMetrics(new Font("Serif", Font.BOLD,12));
+        FontMetrics metrics =g.getFontMetrics(font);
 //        print font metrics
         printProps(metrics, 50, g);
 
         //We set the new font
-        g.setFont(new Font("Serif", Font.ITALIC,12));
+        font = new Font("Serif", Font.ITALIC,14);
+        g.setFont(font);
 //        We get the metrics for the actual font
-         metrics =g.getFontMetrics(new Font("Serif", Font.ITALIC,14));
+         metrics =g.getFontMetrics(font);
 //        print font metrics
-        printProps(metrics, 150, g);
+        printProps(metrics, 170, g);
 
     }
     public void printProps(FontMetrics fontMetrics, int y, Graphics g){
